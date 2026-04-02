@@ -9,7 +9,6 @@ export const ThemeProvider = ({ children }) => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
-  // Optional: Add a class to the body to handle global background colors outside components
   useEffect(() => {
     if (theme === 'dark') {
       document.body.classList.add('bg-dark', 'text-white');
@@ -27,5 +26,4 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-// Helpful custom hook
 export const useTheme = () => useContext(ThemeContext);

@@ -1,7 +1,7 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React from "react";
+import { useParams, Link } from "react-router-dom";
 
-const cakeData = {
+export const cakeData = {
   1: {
     name: "Chocolate Truffle",
     details: {
@@ -285,7 +285,9 @@ const CakeDetails = () => {
       <div className="container mt-5 text-center">
         <h2>Cake not found!</h2>
         <p className="text-muted">No cake exists with ID: {id}</p>
-        <Link to="/cakes" className="btn btn-primary mt-3">Back to Cakes</Link>
+        <Link to="/cakes" className="btn btn-primary mt-3">
+          Back to Cakes
+        </Link>
       </div>
     );
   }
@@ -294,17 +296,26 @@ const CakeDetails = () => {
 
   return (
     <div className="container mt-5">
-      <Link to="/cakes" className="btn btn-outline-secondary mb-4">&larr; Back to Cakes</Link>
-      <div className="card shadow-lg border-0" style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div className="card-header bg-dark text-white p-4">
+      <Link to="/cakes" className="btn btn-outline-secondary mb-4">
+        &larr; Back to Cakes
+      </Link>
+      <div
+        className="card rounded-0 border-0"
+        style={{ maxWidth: "800px", margin: "0 auto" }}
+      >
+        <div className="card-header bg-dark text-white p-4 rounded-0">
           <div className="d-flex justify-content-between align-items-center">
             <h2 className="mb-0">{name}</h2>
-            <span className="badge bg-warning text-dark fs-5">₹{details.price}</span>
+            <span className="badge bg-warning text-dark fs-5">
+              ₹{details.price}
+            </span>
           </div>
         </div>
         <div className="card-body p-4">
-          <p className="lead border-bottom pb-3 text-muted">{details.description}</p>
-          
+          <p className="lead border-bottom pb-3 text-muted">
+            {details.description}
+          </p>
+
           <div className="row g-4 mt-2">
             <div className="col-md-6">
               <ul className="list-group list-group-flush">
@@ -318,18 +329,24 @@ const CakeDetails = () => {
                 </li>
                 <li className="list-group-item d-flex justify-content-between align-items-center bg-transparent">
                   <strong>Rating</strong>
-                  <span>⭐ {details.rating} ({details.reviews} reviews)</span>
+                  <span>
+                    ⭐ {details.rating} ({details.reviews} reviews)
+                  </span>
                 </li>
               </ul>
             </div>
-            
+
             <div className="col-md-6 d-flex flex-column justify-content-center align-items-center">
               {details.isAvailable ? (
-                <span className="badge bg-success p-2 px-3 fs-6 mb-3 w-75 text-center">In Stock</span>
+                <span className="badge bg-success p-2 px-3 fs-6 mb-3 w-75 text-center">
+                  In Stock
+                </span>
               ) : (
-                <span className="badge bg-danger p-2 px-3 fs-6 mb-3 w-75 text-center">Out of Stock</span>
+                <span className="badge bg-danger p-2 px-3 fs-6 mb-3 w-75 text-center">
+                  Out of Stock
+                </span>
               )}
-              
+
               {details.hasOffer && (
                 <div className="alert alert-info py-2 w-75 text-center mb-0 border-info">
                   <strong>Special Offer:</strong> {details.discount}
@@ -337,10 +354,13 @@ const CakeDetails = () => {
               )}
             </div>
           </div>
-          
+
           <div className="mt-5 text-center">
-            <button className="btn btn-lg btn-primary px-5" disabled={!details.isAvailable}>
-              {details.isAvailable ? 'Order Now' : 'Currently Unavailable'}
+            <button
+              className="btn btn-lg btn-primary px-5"
+              disabled={!details.isAvailable}
+            >
+              {details.isAvailable ? "Order Now" : "Currently Unavailable"}
             </button>
           </div>
         </div>

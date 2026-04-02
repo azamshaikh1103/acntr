@@ -20,10 +20,6 @@ const ContextPage = () => {
   );
 };
 
-// ==========================================
-// Props Drilling Implementation
-// ==========================================
-
 const PropsDrilling = () => {
   let [user, setUser] = useState("Azam");
   return (
@@ -70,10 +66,6 @@ const PDComponent5 = ({ user }) => {
     </div>
   );
 };
-
-// ==========================================
-// Context API Implementation
-// ==========================================
 
 const userContext = createContext();
 

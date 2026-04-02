@@ -4,7 +4,7 @@ class ClassComponent extends Component {
   render() {
     return (
       <div>
-        <p>Yes, Here I am, your class component</p>
+        <p>Yes, your class component, atlease misuse me but dont ignore me</p>
       </div>
     );
   }

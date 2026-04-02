@@ -4,7 +4,7 @@ const SupportFromResto = () => {
   return (
     <div>
       <h3>Support From Restaurant</h3>
-      <p>Happy to help!!!!!!</p>
+      <p>Get the F out of here!!!!!!</p>
     </div>
   );
 };

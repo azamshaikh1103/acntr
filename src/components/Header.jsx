@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <nav className={`navbar navbar-expand-lg ${theme === 'dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-body-tertiary'}`}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Swigato</Link>
+        <Link className="navbar-brand" to="/">Azam</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -52,7 +52,7 @@ const Header = () => {
               type="button" 
               onClick={toggleTheme}
             >
-              {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+              {theme === 'dark' ? 'Light' : 'Dark'}
             </button>
             <button 
               className={`btn ${isLoggedIn ? 'btn-danger' : 'btn-primary'}`} 
