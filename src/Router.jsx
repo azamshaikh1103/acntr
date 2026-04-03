@@ -14,6 +14,7 @@ import ContextPage from "./pages/ContextPage";
 import Employees from "./pages/Employees";
 import CakeDetails from "./pages/CakeDetails";
 import AddProducts from "./pages/AddProducts";
+import Cart from "./pages/Cart";
 
 const Router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ const Router = createBrowserRouter([
       {
         path: "/add-products",
         element: <AddProducts />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

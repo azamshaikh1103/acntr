@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const cartItems = useSelector((state) => state.cart.items);
 
   return (
     <nav className={`navbar navbar-expand-lg ${theme === 'dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-body-tertiary'}`}>
@@ -44,6 +46,11 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/add-products">Add Products</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link font-weight-bold" to="/cart">
+                🛒 ({cartItems.length} items)
+              </Link>
             </li>
           </ul>
           <form className="d-flex align-items-center" role="search" onSubmit={(e) => e.preventDefault()}>
