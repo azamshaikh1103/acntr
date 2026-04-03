@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import App from "./App";
 import HomePage from "./pages/HomePage";
-import CakeGallery from "./pages/CakeGallery";
 import RestaurantPage from "./components/RestaurantPage";
 import StatePage from "./pages/State";
 import Support from "./pages/Support";
@@ -15,6 +15,17 @@ import Employees from "./pages/Employees";
 import CakeDetails from "./pages/CakeDetails";
 import AddProducts from "./pages/AddProducts";
 import Cart from "./pages/Cart";
+import Loader from "./pages/Loader";
+
+const CakeGallery = lazy(() => import("./pages/CakeGallery"));
+
+const WithSuspense = (Component) => {
+  return (
+    <Suspense fallback={<Loader />}>
+      <Component />
+    </Suspense>
+  );
+};
 
 const Router = createBrowserRouter([
   {
@@ -27,7 +38,7 @@ const Router = createBrowserRouter([
       },
       {
         path: "/cakes",
-        element: <CakeGallery />,
+        element: WithSuspense(CakeGallery),
       },
       {
         path: "/increement",
